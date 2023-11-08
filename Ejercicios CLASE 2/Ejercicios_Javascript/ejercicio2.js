@@ -2,12 +2,16 @@
 // determine si es un número primo o no. Un número primo es aquel que solo es divisible por 1
 // y por sí mismo.
 
-function esPrimo(num) {
-    if (num % 2 == 0 || num % 3 == 0) {
-        return "NO es primo"
-    } else { 
-        return "ES primo"
+function esPrimo(numero) {
+    if (numero <= 1) {
+      return false;
     }
-}
+    for (let i = 2; i < numero; i++) {
+      if (numero % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-console.log(esPrimo(121));
+console.log(esPrimo(7));
